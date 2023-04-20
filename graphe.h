@@ -19,6 +19,9 @@ public:
     bool isMatrice() const; // true en mode matrice
     bool isFsAps() const;
     bool isListe() const;
+
+
+    bool calculDistance (int racine, vector<int> &dist );
 private:
     vector<vector<Sommet>> matrice; // tab 2D de la matrice d'adjacence du graphe
     vector<Sommet> fs; // tab fs du graphe
