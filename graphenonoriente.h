@@ -11,7 +11,15 @@ public:
     GrapheNonOriente(const vector<Sommet>& fs, const vector<Sommet>& aps);
     GrapheNonOriente(const vector<Chainon>& lp, const vector<Chainon>& ls);
 
-    /** Je ne suis pas encore tout à fait sûre de ce qu'il faut mettre dedans */
+    bool CodagePrufer ( vector <int> & prufer );
+
+ Je ne suis pas encore tout à fait sûre de ce qu'il faut mettre dedans */
 };
+
+
+
+
+
+
 
 #endif // GRAPHENONORIENTE_H
