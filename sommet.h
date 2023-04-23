@@ -4,6 +4,7 @@
 class Sommet
 {
 public:
+    Sommet();
     Sommet(int cle);
     int getCle() const;
 private:
