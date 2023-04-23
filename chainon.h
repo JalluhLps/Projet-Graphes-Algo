@@ -7,6 +7,8 @@ class Chainon : public Sommet /** C'est un type de sommet spécial utiliser pour
 {
 public:
     Chainon(int cle);
+    void setLpSuivant(Chainon* c);
+    void setLsSuivant(Chainon* c);
     Chainon* getLpSuivant() const;
     Chainon* getLsSuivant() const;
 private:
