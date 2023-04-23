@@ -10,22 +10,22 @@ GrapheNonOriente::GrapheNonOriente(const vector<Chainon>& lp, const vector<Chain
 {}
 
 
-bool GrapheNonOriente::CodagePrufer(  vector <int> & pruf)
+bool GrapheNonOriente::codagePrufer(vector<int> &pruf) // Notes en bas de la fn
 {
      // On créer une copie de la matrice car on va la modifier pour trouver le codage de prufer
-    vector <vector <int>> Mat2D;
-    Mat2D.resize(matrice.size() );
+    vector<vector<int>> Mat2D;
+    Mat2D.resize(matrice.size());
 
 
     for (int i = 0 ; i < matrice.size(); i++)
     {
-        Mat2D[i].resize(  matrice[0].size()  );
+        Mat2D[i].resize(matrice[0].size());
         for ( int j = 0 ; j < matrice[0].size(); j++)
             Mat2D[i][j]= matrice[i][j].getCle();
     }
     //
     int nb_som = this->matrice.size();
-    pruf.resize( matrice.size() -2);
+    pruf.resize(matrice.size() -2);
 
     int k = 1;
     while (k <= nb_som-2)
@@ -42,5 +42,10 @@ bool GrapheNonOriente::CodagePrufer(  vector <int> & pruf)
         Mat2D[i][0]=0;
         Mat2D[j][0]--;
     }
+
+    /**
+     * Cedric il manque le retour de ta fonction
+     * Et il faut remplacer tes "int" par des "unsigned" au niveau des boucles de vector
+     * */
 }
 
