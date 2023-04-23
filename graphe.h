@@ -10,29 +10,26 @@ using std::vector;
 class Graphe
 {
 public:
-    Graphe(const vector<vector<Sommet>>& matrice);
-    Graphe(const vector<Sommet>& fs, const vector<Sommet>& aps);
-    Graphe(const vector<Chainon>& lp, const vector<Chainon>& ls);
+    Graphe(const vector<vector<Sommet>>& matrice, int n, int m);
+    Graphe(const vector<Sommet>& fs, const vector<int>& aps, int n, int m);
+    Graphe(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
 
-    enum Etat {MAT, FS, LISTE};
+    bool calculDistance (int racine, vector<int> &dist);
+protected:
+    void matrice2FsAps();
+    void matrice2Liste();
+    void fsAps2Matrice();
+    void fsAps2Liste();
+    void liste2Matrice();
+    void liste2FsAps();
 
-    bool isMatrice() const; // true en mode matrice
-    bool isFsAps() const;
-    bool isListe() const;
-
-
-    bool calculDistance (int racine, vector<int> &dist );
-private:
     vector<vector<Sommet>> matrice; // tab 2D de la matrice d'adjacence du graphe
-    vector<Sommet> fs; // tab fs du graphe
-    vector<Sommet> aps; // tab aps du graphe
-
-    /** Faudrait vérifier par contre si ces tabs garde des sommets ou seulement des entiers */
-
+    vector<Sommet> fs; // tab fs du graphe (sommets du graphe)
+    vector<int> aps; // tab aps contient les indices dans le tab fs
     vector<Chainon> listePrincipale;
     vector<Chainon> listeSecondaire;
-
-    Etat actif; // A supposer qu'un seul état est utilisé à la fois
+    int n; //nbre de sommets
+    int m; //nbre d'arêtes
 };
 
 #endif // GRAPHE_H
