@@ -17,10 +17,10 @@ bool GrapheNonOriente::codagePrufer(vector<int> &pruf) // Notes en bas de la fn
     Mat2D.resize(matrice.size());
 
 
-    for (int i = 0 ; i < matrice.size(); i++)
+    for (unsigned i = 0 ; i < matrice.size(); i++)
     {
         Mat2D[i].resize(matrice[0].size());
-        for ( int j = 0 ; j < matrice[0].size(); j++)
+        for ( unsigned j = 0 ; j < matrice[0].size(); j++)
             Mat2D[i][j]= matrice[i][j].getCle();
     }
     //
@@ -43,9 +43,6 @@ bool GrapheNonOriente::codagePrufer(vector<int> &pruf) // Notes en bas de la fn
         Mat2D[j][0]--;
     }
 
-    /**
-     * Cedric il manque le retour de ta fonction
-     * Et il faut remplacer tes "int" par des "unsigned" au niveau des boucles de vector
-     * */
+    return true;
 }
 
