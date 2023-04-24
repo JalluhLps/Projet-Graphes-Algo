@@ -75,3 +75,16 @@ void Widget::on_Button_SaisieAPSFS_clicked()
 
 }
 
+
+void Widget::on_Button_Prufer_clicked()
+{
+    try {
+        vector <int> prufer;
+        //GrapheOriente grapheAPrufer = grapheActuel;
+                //grapheActuel->codagePrufer(prufer);
+    }  catch (... ) {
+        ui->label_RetourPrufer->setText("Seulement sur un graph non orienté");
+    }
+
+}
+
