@@ -26,7 +26,7 @@ void Widget::on_Button_SaisieAPSFS_clicked()
     QString APS = ui->lineEdit_Saisie_APS->displayText();
     QString FS = ui->lineEdit_Saisie_FS->displayText();
 
-    vector<Sommet> fs,aps;
+    vector<Sommet> fs,aps;  /** Cedric aps est un tab d'entier il ne contient que les ind dans fs */
     fs.reserve(FS.size());
     aps.reserve(APS.size());
 

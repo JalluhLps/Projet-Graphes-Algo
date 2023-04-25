@@ -18,7 +18,6 @@ public:
 
 private slots:
     void on_Button_SaisieAPSFS_clicked();
-
     void on_Button_Prufer_clicked();
 
 private:
