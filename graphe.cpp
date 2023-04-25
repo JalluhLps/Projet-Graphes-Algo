@@ -169,7 +169,7 @@ void Graphe::liste2FsAps()
 }
 
 // NEED APS et FS
-bool Graphe::calculDistance (int racine, vector<int> &dist )
+bool Graphe::calculDistance (int racine, vector<int> &dist) // Ton algo ne fonctionne que pour les non orienté
 {
     vector <int> fil;
     fil.reserve(fs.size() );

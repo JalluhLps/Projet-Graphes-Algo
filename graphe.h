@@ -14,7 +14,8 @@ public:
     Graphe(const vector<Sommet>& fs, const vector<int>& aps, int n, int m);
     Graphe(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
 
-    bool calculDistance (int racine, vector<int> &dist);
+    virtual void rang(vector<int>& rang) = 0;
+    bool calculDistance (int racine, vector<int> &dist); // Ton algo ne fonctionne que pour les non orienté
 protected:
     void matrice2FsAps();
     void matrice2Liste();
