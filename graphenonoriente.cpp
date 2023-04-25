@@ -1,16 +1,77 @@
+#include <queue>
 #include "graphenonoriente.h"
 
-GrapheNonOriente::GrapheNonOriente(const vector<vector<Sommet>>& mat) : Graphe{mat}
+GrapheNonOriente::GrapheNonOriente(const vector<vector<Sommet>>& mat, int n, int m) : Graphe{mat, n, m}
 {}
 
-GrapheNonOriente::GrapheNonOriente(const vector<Sommet>& fs, const vector<Sommet>& aps) : Graphe{fs, aps}
+GrapheNonOriente::GrapheNonOriente(const vector<Sommet>& fs, const vector<int>& aps, int n, int m) : Graphe{fs, aps, n, m}
 {}
 
-GrapheNonOriente::GrapheNonOriente(const vector<Chainon>& lp, const vector<Chainon>& ls) : Graphe{lp, ls}
+GrapheNonOriente::GrapheNonOriente(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m) : Graphe{lp, ls, n, m}
 {}
 
+void GrapheNonOriente::rang(vector<int>& rang) // Algorithme de Kahn
+{
+    // Initialisation du vecteur de rangs à -1
+    rang.resize(n, -1); // n => nb de sommets dans le graphe
 
-bool GrapheNonOriente::codagePrufer(vector<int> &pruf) // Notes en bas de la fn
+    // Calcul du degré de chaque sommet
+    vector<int> deg(n, 0);
+    for (int i = 1; i <= n; i++)
+    {
+        // Parcours de la liste des sommets adjacents
+        int t = this->aps[i];
+        while (this->fs[t].getCle() > 0)
+        {
+            // Incrémentation du degré des deux sommets adjacents
+            deg[i - 1]++;
+            deg[this->fs[t].getCle() - 1]++;
+            t++;
+        }
+    }
+
+    // Initialisation de la file avec les sommets de degré 1
+    std::queue<int> file;
+    for (int i = 0; i < n; i++)
+    {
+        if (deg[i] == 1)
+        {
+            file.push(i + 1);
+            // Le rang des sommets de degré 1 est 0
+            rang[i] = 0;
+        }
+    }
+
+    // Calcul des rangs pour les autres sommets
+    while (!file.empty())
+    {
+        // On récupère le sommet en tête de file
+        int u = file.front();
+        file.pop();
+
+        // On parcourt la liste de ses voisins
+        int t = this->aps[u];
+        while (this->fs[t].getCle() > 0)
+        {
+            int v = this->fs[t].getCle();
+            // Si le voisin v n'a pas encore de rang
+            if (rang[v - 1] == -1)
+            {
+                // On diminue le degré de v et on teste s'il devient de degré 1
+                deg[v - 1]--;
+                if (deg[v - 1] == 1)
+                {
+                    // On ajoute v à la file et on lui attribue un rang en fonction de u
+                    file.push(v);
+                    rang[v - 1] = rang[u - 1] + 1;
+                }
+            }
+            t++;
+        }
+    }
+}
+
+bool GrapheNonOriente::codagePrufer(vector<int> &pruf)
 {
      // On créer une copie de la matrice car on va la modifier pour trouver le codage de prufer
     vector<vector<int>> Mat2D;
