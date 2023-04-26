@@ -107,8 +107,6 @@ bool GrapheNonOriente::codagePrufer(vector<int> &pruf)
     return true;
 }
 
-
-
 bool GrapheNonOriente::calculDistance (int racine, vector<int> &dist)
 {
     vector <int> fil;

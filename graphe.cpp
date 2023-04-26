@@ -168,5 +168,3 @@ void Graphe::liste2FsAps()
     aps.push_back(fs.size()); // On ajoute la taille de fs en dernier élément de aps
 }
 
-
-

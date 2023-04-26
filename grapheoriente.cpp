@@ -57,7 +57,6 @@ void GrapheOriente::tarjanVisite(int u, vector<int>& rang, std::stack<int>& pile
     }
 }
 
-
 bool GrapheOriente::calculDistance (int racine, vector<int> &dist)
 {
     return false;

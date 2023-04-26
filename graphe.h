@@ -15,8 +15,8 @@ public:
     Graphe(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
 
     virtual void rang(vector<int>& rang) = 0;
-    virtual bool calculDistance (int racine, vector<int> &dist);
-    virtual bool codagePrufer (vector <int> & prufer);
+    virtual bool calculDistance (int racine, vector<int>& dist) = 0;
+    virtual bool codagePrufer (vector <int>& prufer) = 0;
 protected:
     void matrice2FsAps();
     void matrice2Liste();
