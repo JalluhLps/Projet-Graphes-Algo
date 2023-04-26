@@ -12,8 +12,7 @@ public:
     GrapheNonOriente(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
 
     void rang(vector<int>& rang) override;
-    bool codagePrufer (vector <int> & prufer);
-
+    bool codagePrufer (vector <int> & prufer) override;
     bool calculDistance (int racine, vector<int> &dist) override;
 };
 

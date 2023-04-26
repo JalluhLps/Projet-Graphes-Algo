@@ -16,6 +16,7 @@ public:
 
     virtual void rang(vector<int>& rang) = 0;
     virtual bool calculDistance (int racine, vector<int> &dist);
+    virtual bool codagePrufer (vector <int> & prufer);
 protected:
     void matrice2FsAps();
     void matrice2Liste();
