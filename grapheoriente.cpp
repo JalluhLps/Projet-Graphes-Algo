@@ -1,5 +1,5 @@
 #include "grapheoriente.h"
-
+#include <fstream>
 GrapheOriente::GrapheOriente(const vector<vector<Sommet>>& mat, int n, int m) : Graphe{mat, n, m}
 {}
 
@@ -66,3 +66,28 @@ bool GrapheOriente::codagePrufer (vector <int> & prufer)
 {
     return false;
 }
+
+bool GrapheOriente::lireGrapheOriente(std::string nomFic)
+{
+        std::ifstream fic(nomFic);
+        if(fic.is_open()) {
+            int n, m;
+            fic >> n >> m;
+            vector<vector<Sommet>> matrice(n,vector<Sommet>(n));
+            for(int i = 0; i < n; i++) {
+                for(int j = 0; j < n; j++) {
+                    int s;
+                    fic >> s;
+                    matrice[i][j] = Sommet(s);
+                }
+            }
+            GrapheOriente g(matrice,n,m);
+            g.fsAps2Matrice();
+            g.fsAps2Liste();
+            *this = g;
+            return true;
+        }
+        return false;
+
+}
+
