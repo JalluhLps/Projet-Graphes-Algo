@@ -13,6 +13,8 @@ public:
 
     void rang(vector<int>& rang) override;
     bool codagePrufer (vector <int> & prufer);
+
+    bool calculDistance (int racine, vector<int> &dist) override;
 };
 
 

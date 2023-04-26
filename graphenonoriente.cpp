@@ -107,3 +107,45 @@ bool GrapheNonOriente::codagePrufer(vector<int> &pruf)
     return true;
 }
 
+
+
+bool Graphe::calculDistance (int racine, vector<int> &dist)
+{
+    vector <int> fil;
+    fil.reserve(fs.size() );
+    dist.resize(this->fs.size());
+
+    fil[0] = racine;
+
+    for (unsigned i = 0; i < dist.size(); i++)
+        dist[i] = -1;
+    dist[racine] = 0;
+
+    int i = 0, j = 1, k = 0, ifin, s, it;
+    Sommet t (-1);
+    while ( i < j ) // tant que la file d’attente n’est pas vide
+    {
+        k++;
+        ifin = j;
+        while (i < ifin) // parcourir le bloc courant
+        {
+            i++;
+            s = fil[i];
+            it = this->aps[s];
+            t = fs[it].getCle();
+            while (t.getCle() > 0) // parcourir tous les successeurs de chaque sommet du bloc courant
+            {
+                if (dist[t.getCle()] == -1) // Si le successeur du sommet courant n’est pas encore marqué
+                {
+                    j++;
+                    fil[j] = t.getCle(); // on le place dans le bloc suivant en préparation et on lui affecte la distance courante
+                    dist[t.getCle()] = k;
+                }
+                t = fs[it];
+                it++;
+            }
+        }
+    }
+
+    return true;
+   }
