@@ -7,7 +7,7 @@ public:
     Sommet();
     Sommet(int cle);
     int getCle() const;
-    void setCle( int newKey );
+    void setCle(int newKey);
 private:
     int cle;
 };

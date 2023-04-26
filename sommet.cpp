@@ -11,7 +11,7 @@ int Sommet::getCle() const
     return cle;
 }
 
-void Sommet::setCle( int newKey )
+void Sommet::setCle(int newKey)
 {
     this->cle = newKey ;
 }

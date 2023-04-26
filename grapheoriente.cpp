@@ -1,5 +1,5 @@
 #include "grapheoriente.h"
-#include <fstream>
+
 GrapheOriente::GrapheOriente(const vector<vector<Sommet>>& mat, int n, int m) : Graphe{mat, n, m}
 {}
 
@@ -35,20 +35,25 @@ void GrapheOriente::tarjanVisite(int u, vector<int>& rang, std::stack<int>& pile
     pile.push(u);
     dansPile[u] = true;
 
-    for (int i = aps[u]; i < aps[u+1]; i++) {
+    for (int i = aps[u]; i < aps[u+1]; i++)
+    {
         int v = fs[i].getCle();
-        if (profondeur[v] == -1) {
+        if (profondeur[v] == -1)
+        {
             tarjanVisite(v, rang, pile, profondeur, bas, dansPile, num);
             bas[u] = std::min(bas[u], bas[v]);
         }
-        else if (dansPile[v]) {
+        else if (dansPile[v])
+        {
             bas[u] = std::min(bas[u], profondeur[v]);
         }
     }
 
-    if (bas[u] == profondeur[u]) {
+    if (bas[u] == profondeur[u])
+    {
         int v;
-        do {
+        do
+        {
             v = pile.top();
             pile.pop();
             dansPile[v] = false;
@@ -66,28 +71,3 @@ bool GrapheOriente::codagePrufer (vector <int> & prufer)
 {
     return false;
 }
-
-bool GrapheOriente::lireGrapheOriente(std::string nomFic)
-{
-        std::ifstream fic(nomFic);
-        if(fic.is_open()) {
-            int n, m;
-            fic >> n >> m;
-            vector<vector<Sommet>> matrice(n,vector<Sommet>(n));
-            for(int i = 0; i < n; i++) {
-                for(int j = 0; j < n; j++) {
-                    int s;
-                    fic >> s;
-                    matrice[i][j] = Sommet(s);
-                }
-            }
-            GrapheOriente g(matrice,n,m);
-            g.fsAps2Matrice();
-            g.fsAps2Liste();
-            *this = g;
-            return true;
-        }
-        return false;
-
-}
-
