@@ -4,7 +4,7 @@
 #include <vector>
 #include "chainon.h"
 #include "sommet.h"
-
+#include <string>
 using std::vector;
 
 class Graphe
@@ -13,6 +13,7 @@ public:
     Graphe(const vector<vector<Sommet>>& matrice, int n, int m);
     Graphe(const vector<Sommet>& fs, const vector<int>& aps, int n, int m);
     Graphe(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
+    bool ecrireGraphe(std::string nomFic);
 
     virtual void rang(vector<int>& rang) = 0;
     virtual bool calculDistance (int racine, vector<int>& dist) = 0;
