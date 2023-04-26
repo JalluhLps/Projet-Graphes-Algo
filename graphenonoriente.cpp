@@ -1,6 +1,6 @@
 #include <queue>
+#include <algorithm>
 #include "graphenonoriente.h"
-#include <fstream>
 
 GrapheNonOriente::GrapheNonOriente(const vector<vector<Sommet>>& mat, int n, int m) : Graphe{mat, n, m}
 {}
@@ -10,6 +10,44 @@ GrapheNonOriente::GrapheNonOriente(const vector<Sommet>& fs, const vector<int>& 
 
 GrapheNonOriente::GrapheNonOriente(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m) : Graphe{lp, ls, n, m}
 {}
+
+int GrapheNonOriente::trouverParent(int s, vector<int>& parents) // => fusionner() vu en cours mais utilise "Union-Find"
+{
+    if (parents[s] == s)
+    {
+        return s;
+    }
+    return parents[s] = trouverParent(parents[s], parents);
+}
+
+vector<Arete> GrapheNonOriente::kruskal()
+{
+    // Trier les arêtes par ordre croissant de poids
+    sort(aretes.begin(), aretes.end(),
+         [](const Arete& a, const Arete& b) {return a.getPoids() < b.getPoids();}
+         );
+    /** Le 3è param est une fn lambda qui permet de déterminer quel arête trié en premier */
+
+    // Initialiser les parents pour chaque noeud à lui-même
+    vector<int> parents(n);
+    for (int i = 0; i < n; i++)
+    {
+        parents[i] = i;
+    }
+
+    vector<Arete> arbreRecouvrant;
+    for (const auto& a : aretes)
+    {
+        int s = a.getS(), t = a.getT();
+        int parentS = trouverParent(s, parents), parentT = trouverParent(t, parents); // appel à trouverParent
+        if (parentS != parentT)
+        {
+            arbreRecouvrant.push_back(a);
+            parents[parentS] = parentT; // appel à fusionner
+        }
+    }
+    return arbreRecouvrant;
+}
 
 void GrapheNonOriente::rang(vector<int>& rang) // Algorithme de Kahn
 {
@@ -147,28 +185,4 @@ bool GrapheNonOriente::calculDistance (int racine, vector<int> &dist)
     }
 
     return true;
-   }
-
-bool GrapheNonOriente::lireGrapheNonOriente(std::string nomFic)
-   {
-    std::ifstream fic(nomFic);
-    if(fic.is_open()) {
-        int n, m;
-        fic >> n >> m;
-        vector<vector<Sommet>> matrice(n,vector<Sommet>(n));
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                int s;
-                fic >> s;
-                matrice[i][j] = Sommet(s);
-            }
-        }
-        GrapheNonOriente g(matrice,n,m);
-        g.fsAps2Matrice();
-        g.fsAps2Liste();
-        *this = g;
-        return true;
-    }
-    return false;
-
    }
