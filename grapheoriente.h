@@ -4,6 +4,7 @@
 #include <vector>
 #include <stack>
 #include "graphe.h"
+#include <string>
 
 class GrapheOriente : public Graphe
 {
