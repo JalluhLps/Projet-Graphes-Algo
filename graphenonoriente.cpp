@@ -147,3 +147,27 @@ bool GrapheNonOriente::calculDistance (int racine, vector<int> &dist)
 
     return true;
    }
+
+bool GrapheNonOriente::lireGrapheNonOriente(std::string nomFic)
+   {
+    std::ifstream fic(nomFic);
+    if(fic.is_open()) {
+        int n, m;
+        fic >> n >> m;
+        vector<vector<Sommet>> matrice(n,vector<Sommet>(n));
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                int s;
+                fic >> s;
+                matrice[i][j] = Sommet(s);
+            }
+        }
+        GrapheNonOriente g(matrice,n,m);
+        g.fsAps2Matrice();
+        g.fsAps2Liste();
+        *this = g;
+        return true;
+    }
+    return false;
+
+   }
