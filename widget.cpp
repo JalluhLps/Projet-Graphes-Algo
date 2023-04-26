@@ -67,8 +67,12 @@ void Widget::on_Button_SaisieAPSFS_clicked()
         i++;
     }
     //
-    if ( ui->checkBox_EstOriente->isChecked() ) grapheActuel = new  GrapheOriente ( fs,aps);
-    else grapheActuel = new  GrapheNonOriente  ( fs,aps);
+    vector <int> aps2;
+    aps2.resize( aps.size());
+    for (unsigned i = 0 ; i < fs.size() ; i++) aps2[i] =  aps[i].getCle();
+
+    if ( ui->checkBox_EstOriente->isChecked() ) grapheActuel = new  GrapheOriente ( fs,aps2, fs.size() , aps.size() );
+    else grapheActuel = new  GrapheNonOriente  ( fs,aps2, fs.size() , aps.size());
 
 
     // afficher graphe Actuel;
@@ -80,10 +84,23 @@ void Widget::on_Button_Prufer_clicked()
 {
     try {
         vector <int> prufer;
-        //GrapheOriente grapheAPrufer = grapheActuel;
-                //grapheActuel->codagePrufer(prufer);
+        if ( grapheActuel->codagePrufer(prufer) == true  ){
+
+            std::string textPrufer = "{";
+            for ( unsigned i = 0 ; i < prufer.size() ; i++)
+            {
+                textPrufer.append(std::to_string(prufer[i])  );
+                textPrufer.append(",");
+            }
+
+
+            ui->label_RetourPrufer->setText( QString::fromStdString(textPrufer )  );
+        }
+
+        else  {ui->label_RetourPrufer->setText("Seulement sur un graph non orienté"); }
+
     }  catch (... ) {
-        ui->label_RetourPrufer->setText("Seulement sur un graph non orienté");
+        ui->label_RetourPrufer->setText("Erreur dans le codage");
     }
 
 }
