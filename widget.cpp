@@ -92,6 +92,7 @@ void Widget::on_Button_Prufer_clicked()
                 textPrufer.append(std::to_string(prufer[i])  );
                 textPrufer.append(",");
             }
+            textPrufer.append("}");
 
 
             ui->label_RetourPrufer->setText( QString::fromStdString(textPrufer )  );
@@ -103,5 +104,38 @@ void Widget::on_Button_Prufer_clicked()
         ui->label_RetourPrufer->setText("Erreur dans le codage");
     }
 
+}
+
+
+void Widget::on_pushButton_clicked()
+{
+    try {
+
+
+         vector <int> dist;
+
+        QString numeroRacine = ui->lineEdit_Calcul_RacineDistance->text();
+        int numeroRacineInt =  numeroRacine.toInt();
+        if (  grapheActuel->calculDistance(numeroRacineInt ,  dist) == true ) {
+
+            std::string  affichageDist ="{";
+            for ( unsigned i = 0 ; i < dist.size() ; i++)
+            {
+                affichageDist.append(std::to_string(dist[i])  );
+                affichageDist.append(",");
+            }
+            affichageDist.append("}");
+
+            ui->label_RetourDistance2->setText(   QString::fromStdString( affichageDist )   );
+
+        }
+        else {
+
+            ui->label_RetourDistance2->setText("Impossible de calculer la distance sur un graphe orienté");
+        }
+    }  catch ( ...) {
+        ui->label_RetourDistance2->setText("Impossible de calculer la distance");
+
+    }
 }
 

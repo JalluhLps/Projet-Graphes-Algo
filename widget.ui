@@ -135,6 +135,55 @@
       <string>Codage de Prufer</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>131</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Calcul distance</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_Calcul_RacineDistance">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>100</y>
+       <width>51</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Inchange">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>100</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Racine</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_RetourDistance2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>140</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>..................</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QWidget" name="widgetGraphe" native="true">
