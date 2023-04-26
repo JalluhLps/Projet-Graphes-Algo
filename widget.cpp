@@ -71,12 +71,11 @@ void Widget::on_Button_SaisieAPSFS_clicked()
     aps2.resize( aps.size());
     for (unsigned i = 0 ; i < fs.size() ; i++) aps2[i] =  aps[i].getCle();
 
-    if ( ui->checkBox_EstOriente->isChecked() ) grapheActuel = new  GrapheOriente ( fs,aps2, fs.size() , aps.size() );
-    else grapheActuel = new  GrapheNonOriente  ( fs,aps2, fs.size() , aps.size());
+    if ( ui->checkBox_EstOriente->isChecked() ) grapheActuel = new  GrapheOriente (fs, aps2, fs.size() , aps.size());
+    else grapheActuel = new  GrapheNonOriente  (fs, aps2, fs.size() , aps.size());
 
 
     // afficher graphe Actuel;
-
 }
 
 
@@ -109,14 +108,14 @@ void Widget::on_Button_Prufer_clicked()
 
 void Widget::on_pushButton_clicked()
 {
-    try {
-
-
-         vector <int> dist;
+    try
+    {
+        vector <int> dist;
 
         QString numeroRacine = ui->lineEdit_Calcul_RacineDistance->text();
         int numeroRacineInt =  numeroRacine.toInt();
-        if (  grapheActuel->calculDistance(numeroRacineInt ,  dist) == true ) {
+        if ( grapheActuel->calculDistance(numeroRacineInt , dist) == true )
+        {
 
             std::string  affichageDist ="{";
             for ( unsigned i = 0 ; i < dist.size() ; i++)
@@ -129,13 +128,14 @@ void Widget::on_pushButton_clicked()
             ui->label_RetourDistance2->setText(   QString::fromStdString( affichageDist )   );
 
         }
-        else {
+        else
+        {
 
             ui->label_RetourDistance2->setText("Impossible de calculer la distance sur un graphe orienté");
         }
-    }  catch ( ...) {
+    }  catch (...)
+    {
         ui->label_RetourDistance2->setText("Impossible de calculer la distance");
-
     }
 }
 
