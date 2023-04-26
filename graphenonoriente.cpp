@@ -1,5 +1,6 @@
 #include <queue>
 #include "graphenonoriente.h"
+#include <fstream>
 
 GrapheNonOriente::GrapheNonOriente(const vector<vector<Sommet>>& mat, int n, int m) : Graphe{mat, n, m}
 {}
