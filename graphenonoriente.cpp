@@ -109,7 +109,7 @@ bool GrapheNonOriente::codagePrufer(vector<int> &pruf)
 
 
 
-bool Graphe::calculDistance (int racine, vector<int> &dist)
+bool GrapheNonOriente::calculDistance (int racine, vector<int> &dist)
 {
     vector <int> fil;
     fil.reserve(fs.size() );
