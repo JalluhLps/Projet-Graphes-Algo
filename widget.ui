@@ -233,6 +233,19 @@
       <string>Charger un graphe</string>
      </property>
     </widget>
+    <widget class="QCheckBox" name="checkBoxOouNO">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>350</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>graphe orienté</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QWidget" name="widgetGraphe" native="true">

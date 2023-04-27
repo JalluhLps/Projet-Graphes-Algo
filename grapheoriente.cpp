@@ -134,8 +134,6 @@ bool GrapheOriente::lireGraphe(std::string nomFic)
                 }
             }
             GrapheOriente g(matrice,n,m);
-            g.fsAps2Matrice();
-            g.fsAps2Liste();
             *this = g;
             return true;
         }

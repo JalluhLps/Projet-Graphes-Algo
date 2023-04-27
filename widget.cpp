@@ -155,8 +155,18 @@ void Widget::on_Button_sauvegarder_graphe_clicked()
 
 void Widget::on_Button_charger_graphe_clicked()
 {
+    vector<vector<Sommet>> vide;
     QString qstr = ui->text_nomFic->toPlainText();
     std::string txt = qstr.toStdString();
+    if(ui->checkBoxOouNO->isChecked())
+    {
+        grapheActuel=new GrapheOriente(vide,0,0);
+    }
+    else
+    {
+        grapheActuel=new GrapheNonOriente(vide,0,0);
+    }
+
     QMessageBox msg;
     if(grapheActuel->lireGraphe(txt)==false)
     {
