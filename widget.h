@@ -19,7 +19,12 @@ public:
 private slots:
     void on_Button_SaisieAPSFS_clicked();
     void on_Button_Prufer_clicked();
+
     void on_pushButton_clicked();
+
+    void on_Button_sauvegarder_graphe_clicked();
+
+    void on_Button_charger_graphe_clicked();
 
 private:
     Ui::Widget *ui;
