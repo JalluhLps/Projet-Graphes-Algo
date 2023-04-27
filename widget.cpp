@@ -10,9 +10,6 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-
-
-
 }
 
 Widget::~Widget()
@@ -74,9 +71,7 @@ void Widget::on_Button_SaisieAPSFS_clicked()
     if ( ui->checkBox_EstOriente->isChecked() ) grapheActuel = new  GrapheOriente ( fs,aps2, fs.size() , aps.size() );
     else grapheActuel = new  GrapheNonOriente  ( fs,aps2, fs.size() , aps.size());
 
-
     // afficher graphe Actuel;
-
 }
 
 
@@ -145,32 +140,33 @@ void Widget::on_Button_sauvegarder_graphe_clicked()
     QString qstr = ui->text_nomFic->toPlainText();
     std::string txt = qstr.toStdString();
     QMessageBox msg;
-        if(grapheActuel->ecrireGraphe(txt)==false)
-        {
+    if(grapheActuel->ecrireGraphe(txt)==false)
+    {
         msg.setText("Fichier introuvable");
         msg.exec();
-        }
-        else{
+    }
+    else
+    {
         msg.setText("Graphe sauvegarder");
         msg.exec();
-        }
-
+    }
 }
 
 
 void Widget::on_Button_charger_graphe_clicked()
 {
-        QString qstr = ui->text_nomFic->toPlainText();
-        std::string txt = qstr.toStdString();
-        QMessageBox msg;
-        if(grapheActuel->lireGraphe(txt)==false)
-        {
+    QString qstr = ui->text_nomFic->toPlainText();
+    std::string txt = qstr.toStdString();
+    QMessageBox msg;
+    if(grapheActuel->lireGraphe(txt)==false)
+    {
         msg.setText("Fichier introuvable");
         msg.exec();
-        }
-        else{
+    }
+    else
+    {
         msg.setText("Graphe chargé");
         msg.exec();
-        }
+    }
 }
 

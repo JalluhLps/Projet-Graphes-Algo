@@ -169,31 +169,29 @@ void Graphe::liste2FsAps()
     aps.push_back(fs.size()); // On ajoute la taille de fs en dernier élément de aps
 }
 
-
 bool Graphe::ecrireGraphe(std::string nomFic)
 {
+    std::ofstream fic(nomFic);
 
-        std::ofstream fic(nomFic);
+    if(fic.is_open()){
+        int nbS,nbA;
+        nbS=this->n;
+        nbA=this->m;
+        fic<<nbS<<std::endl;
+        fic<<nbA<<std::endl;
 
-        if(fic.is_open()){
-            int nbS,nbA;
-            nbS=this->n;
-            nbA=this->m;
-            fic<<nbS<<std::endl;
-            fic<<nbA<<std::endl;
-
-            for(int i=0;i<nbS;i++){
-                for(int j = 0;j<nbS;j++){
-                    fic<<this->matrice[i][j].getCle()<<" ";
-                }
-                fic<<std::endl;
+        for(int i=0;i<nbS;i++){
+            for(int j = 0;j<nbS;j++){
+                fic<<this->matrice[i][j].getCle()<<" ";
             }
-
-            fic.close();
-            return true;
+            fic<<std::endl;
         }
-            else
-            {
-                return false;
-            }
+
+        fic.close();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

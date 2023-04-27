@@ -8,14 +8,16 @@
 class GrapheOriente : public Graphe
 {
 public:
-    // A revenir dessus
     GrapheOriente(const vector<vector<Sommet>>& matrice, int n, int m);
     GrapheOriente(const vector<Sommet>& fs, const vector<int>& aps, int n, int m);
     GrapheOriente(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
-    bool lireGraphe(std::string nomFic) override;
 
+    // Méthodes classiques
+    void djikstra (vector<int>& fs, vector<int>& aps, vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr);
+
+    // Méthodes virtuelles
+    bool lireGraphe(std::string nomFic) override;
     void rang(vector<int>& rang) override;
-    void Djikstra (vector<int>& fs, vector<int>& aps, vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr);
     bool codagePrufer (vector <int> & prufer) override;
     bool calculDistance (int racine, vector<int> &dist) override;
 private:
