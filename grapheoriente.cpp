@@ -67,7 +67,7 @@ bool GrapheOriente::codagePrufer (vector <int> & prufer)
     return false;
 }
 
-void GrapheOriente::djikstra (vector<int>& fs, vector<int>& aps, vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr) // p matrice des poids,d matrice distance, pr matrice predecesseurs, s
+void GrapheOriente::djikstra ( vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr) // p matrice des poids,d matrice distance, pr matrice predecesseurs, s
 {
     int n = aps[0];
     pr.resize(n+1);
@@ -100,15 +100,15 @@ void GrapheOriente::djikstra (vector<int>& fs, vector<int>& aps, vector<vector<i
         inS[j] = 0;
         ind--;
         int k = aps[j];
-        while (fs[k] != 0)
+        while (this->fs[k].getCle() != 0)
         {
-            if (inS[fs[k]] == 1)
+            if (inS[this->fs[k].getCle()] == 1)
             {
-                int v = d[j] + p[j][fs[k]];
-                if (v < d[fs[k]])
+                int v = d[j] + p[j][this->fs[k].getCle()];
+                if (v < d[this->fs[k].getCle()])
                 {
-                    d[fs[k]] = v;
-                    pr[fs[k]] = j;
+                    d[this->fs[k].getCle()] = v;
+                    pr[this->fs[k].getCle()] = j;
                 }
             }
             k++;

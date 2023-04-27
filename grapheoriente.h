@@ -13,7 +13,7 @@ public:
     GrapheOriente(const vector<Chainon>& lp, const vector<Chainon>& ls, int n, int m);
 
     // Méthodes classiques
-    void djikstra (vector<int>& fs, vector<int>& aps, vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr);
+    void djikstra (vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr);
 
     // Méthodes virtuelles
     bool lireGraphe(std::string nomFic) override;
