@@ -175,3 +175,23 @@ bool GrapheNonOriente::lireGraphe(std::string nomFic)
 
    }
 
+   void GrapheNonOriente::tarjan(int u, vector<int>& indices, vector<int>& low, stack<int>& pile, vector<bool>& dans_pile, vector<vector<int>>& composantes)
+   {
+
+   }
+
+   vector<vector<int>> GrapheNonOriente::trouverCFC()
+   {
+    vector<vector<int>> vide(0);
+    return vide;
+   }
+
+   vector<vector<int>> GrapheNonOriente::trouverGrapheReduit(vector<vector<int>>& graphe)
+   {
+    vector<vector<int>> vide(0);
+    return vide;
+   }
+   void GrapheNonOriente::trouver_bases(vector<vector<int>>& graphe_reduit, vector<vector<int>>& composantes)
+   {
+
+   }

@@ -5,6 +5,8 @@
 #include <stack>
 #include "graphe.h"
 #include<string>
+using std::stack;
+
 class GrapheOriente : public Graphe
 {
 public:
@@ -14,7 +16,10 @@ public:
 
     // Méthodes classiques
     void djikstra (vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr);
-
+    void tarjan(int u, vector<int>& indices, vector<int>& low, stack<int>& pile, vector<bool>& dans_pile, vector<vector<int>>& composantes) override;
+    vector<vector<int>> trouverCFC() override;
+    vector<vector<int>> trouverGrapheReduit(vector<vector<int>>& graphe) override;
+    void trouver_bases(vector<vector<int>>& graphe_reduit, vector<vector<int>>& composantes) override;
     // Méthodes virtuelles
     bool lireGraphe(std::string nomFic) override;
     void rang(vector<int>& rang) override;

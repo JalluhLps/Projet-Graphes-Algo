@@ -17,6 +17,10 @@ public:
     void rang(vector<int>& rang) override;
     bool codagePrufer (vector <int> & prufer) override;
     bool calculDistance (int racine, vector<int> &dist) override;
+    void tarjan(int u, vector<int>& indices, vector<int>& low, stack<int>& pile, vector<bool>& dans_pile, vector<vector<int>>& composantes) override;
+    vector<vector<int>> trouverCFC() override;
+    vector<vector<int>> trouverGrapheReduit(vector<vector<int>>& graphe) override;
+    void trouver_bases(vector<vector<int>>& graphe_reduit, vector<vector<int>>& composantes) override;
 };
 
 #endif // GRAPHENONORIENTE_H

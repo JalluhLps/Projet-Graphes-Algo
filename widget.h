@@ -22,6 +22,8 @@ private slots:
     void on_pushButton_clicked();
     void on_Button_sauvegarder_graphe_clicked();
     void on_Button_charger_graphe_clicked();
+    void on_Button_Tarjan_clicked();
+
 private:
     Ui::Widget *ui;
     Graphe* grapheActuel;

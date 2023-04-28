@@ -180,3 +180,29 @@ void Widget::on_Button_charger_graphe_clicked()
     }
 }
 
+
+void Widget::on_Button_Tarjan_clicked()
+{
+    ui->resultat_tarjan->clear();
+    vector<vector<int>> composantes;
+    composantes=grapheActuel->trouverCFC();
+    if(composantes.empty())
+    {
+        ui->resultat_tarjan->setPlainText("Graphe vide");
+    }
+    else
+    {
+    QString cfc = "";
+    for (auto& composante : composantes) {
+        cfc+= "Composante fortement connexe : ";
+        for (int v : composante) {
+            cfc+= QString::number(v);
+            cfc+=" ";
+        }
+        cfc += "\n";
+    }
+    ui->resultat_tarjan->setPlainText(cfc);
+
+}
+}
+

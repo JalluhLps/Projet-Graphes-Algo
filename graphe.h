@@ -5,6 +5,8 @@
 #include <string>
 #include "chainon.h"
 #include "sommet.h"
+#include <stack>
+using std::stack;
 
 using std::vector;
 
@@ -23,6 +25,10 @@ public:
     virtual void rang(vector<int>& rang) = 0;
     virtual bool calculDistance (int racine, vector<int>& dist) = 0;
     virtual bool codagePrufer (vector <int>& prufer) = 0;
+    virtual void tarjan(int u, vector<int>& indices, vector<int>& low, stack<int>& pile, vector<bool>& dans_pile, vector<vector<int>>& composantes)=0;
+    virtual vector<vector<int>> trouverGrapheReduit(vector<vector<int>>& graphe)=0;
+    virtual vector<vector<int>> trouverCFC()=0;
+    virtual void trouver_bases(vector<vector<int>>& graphe_reduit, vector<vector<int>>& composantes)=0;
 protected:
     void matrice2FsAps();
     void matrice2Liste();
