@@ -16,14 +16,14 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>890</x>
-     <y>9</y>
+     <x>900</x>
+     <y>10</y>
      <width>351</width>
      <height>581</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -112,7 +112,7 @@
     <widget class="QLabel" name="label_RetourPrufer">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>220</x>
        <y>40</y>
        <width>61</width>
        <height>21</height>
@@ -125,7 +125,7 @@
     <widget class="QPushButton" name="Button_Prufer">
      <property name="geometry">
       <rect>
-       <x>39</x>
+       <x>60</x>
        <y>40</y>
        <width>131</width>
        <height>24</height>
@@ -138,8 +138,8 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>140</y>
+       <x>70</x>
+       <y>160</y>
        <width>131</width>
        <height>24</height>
       </rect>
@@ -174,8 +174,8 @@
     <widget class="QLabel" name="label_RetourDistance2">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>140</y>
+       <x>220</x>
+       <y>160</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -188,7 +188,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>330</y>
+       <y>300</y>
        <width>121</width>
        <height>16</height>
       </rect>
@@ -201,7 +201,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>350</y>
+       <y>330</y>
        <width>131</width>
        <height>31</height>
       </rect>
@@ -210,9 +210,9 @@
     <widget class="QPushButton" name="Button_sauvegarder_graphe">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>30</x>
        <y>420</y>
-       <width>131</width>
+       <width>161</width>
        <height>31</height>
       </rect>
      </property>
@@ -223,9 +223,9 @@
     <widget class="QPushButton" name="Button_charger_graphe">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>200</x>
        <y>420</y>
-       <width>121</width>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
@@ -237,7 +237,7 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>350</y>
+       <y>340</y>
        <width>111</width>
        <height>20</height>
       </rect>
@@ -272,6 +272,74 @@
        <width>331</width>
        <height>171</height>
       </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>A propos</string>
+    </attribute>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>20</y>
+       <width>311</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Ordonnancement des graphes&lt;/span&gt;&lt;span style=&quot; font-size:6pt; color:#ff0000;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Cet algorithme utilise une file d'attente pour stocker les sommets sans prédécesseur (ceux dont le degré entrant est nul) et les retire un par un en les ajoutant à l'ordre topologique. Pour chaque sommet retiré, l'algorithme diminue le degré entrant de ses successeurs et ajoute ceux qui ont un degré entrant nul à la file d'attente.Si le graphe contient un cycle, l'algorithme ne peut pas trouver d'ordre topologique car il y aura au moins un sommet qui ne pourra jamais être retiré de la file d'attente.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Problématique &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;:Déterminer la séquence optimale d'exécution des tâches d'un ensemble donné, en respectant certaines contraintes. Les contraintes peuvent inclure des dépendances entre les tâches, des limites de temps, des exigences de ressources, des priorités, etc.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Le principe de l'Algorithme : &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Est de trouver une séquence d'exécution optimale en fonction de certains critères, tels que le temps d'exécution total, le coût total, etc. Pour cela, l'algorithme utilise généralement des techniques d'optimisation, telles que la recherche de la meilleure solution parmi un grand nombre de possibilités.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Conditions de son utilisation: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Dépendent des contraintes spécifiques du problème à résoudre. Par exemple, si le problème implique des dépendances entre les tâches, l'algorithme doit être capable de prendre en compte ces dépendances pour déterminer la séquence optimale d'exécution. De même, si le problème implique des contraintes de temps strictes, l'algorithme doit être en mesure de respecter ces contraintes pour garantir que les tâches sont exécutées dans les délais impartis. En général, l'algorithme d'ordonnancement est le plus efficace lorsqu'il est utilisé pour résoudre des problèmes relativement complexes impliquant de nombreuses tâches et des contraintes multiples.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Algorithme de Dijkstra&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;C’est un algorithme utilisé pour trouver le plus court chemin entre un nœud source et tous les autres nœuds dans un graphe pondéré, orienté ou non. L'algorithme utilise une approche de programmation dynamique, en construisant une table de distances minimales à partir du nœud source à chaque nœud dans le graphe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Problématique &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;: Résoudre le problème du plus court chemin dans un graphe pondéré, c'est-à-dire trouver le chemin le plus court entre deux sommets d'un graphe, en prenant en compte les poids des arêtes qu&lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;i &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;relient les sommets.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Le principe de l'Algorithme: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Calculer les distances les plus courtes entre un sommet source et tous les autres sommets du graphe, en utilisant une approche de programmation dynamique. Pour cela, l'algorithme utilise une file de priorité pour stocker les sommets à explorer, en commençant par le sommet source, et en mettant à jour les distances et les chemins à mesure que l'algorithme explore le graphe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Conditions de son utilisation :&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; Le graphe doit être connexe, c'est-à-dire qu'il doit exister un chemin entre chaque paire de sommets. De plus, les poids des arêtes doivent être positifs, sinon l'algorithme ne fonctionnera pas correctement. L'algorithme de Dijkstra peut également être utilisé pour résoudre des problèmes plus complexes, tels que la recherche du plus court chemin dans un graphe orienté avec des arêtes négatives, en utilisant des techniques de modification de graphes, telles que la transformation de Bellman-Ford.&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Algorithme de Dantzig&lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;L'algorithme de Dantzig fonctionne en trouvant successivement des sommets extrêmes (ou coins) du polyèdre convexe des solutions admissibles du problème de PL. Ces sommets sont appelés &amp;quot;points de base&amp;quot;. La méthode commence par un point de base arbitraire et se déplace d'un point de base à un autre en choisissant une direction de déplacement optimale qui améliore la fonction objective tout en respectant les contraintes.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Problématique&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;:Résoudre des problèmes d'optimisation linéaire. Ces problèmes consistent à maximiser ou minimiser une fonction linéaire, sous des contraintes linéaires.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Le principe de l'Algorithme: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Trouver une solution optimale en utilisant une méthode de recherche itérative. L'algorithme commence par une solution initiale qui satisfait toutes les contraintes, puis il explore l'espace de recherche en déplaçant la solution le long des arêtes d'un polyèdre convexe, appelé polyèdre des contraintes. L'algorithme trouve une solution optimale en trouvant un sommet de ce polyèdre convexe qui est optimal, c'est-à-dire qui maximise ou minimise la fonction objectif.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Conditions de son utilisation : &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Le problème doit être formulé sous forme de programme linéaire, avec des contraintes linéaires et une fonction objectif linéaire. De plus, le problème doit être bien posé, c'est-à-dire que la solution optimale doit exister et être unique. Enfin, l'algorithme fonctionne mieux lorsque le nombre de variables et de contraintes est relativement petit, sinon l'algorithme peut devenir très coûteux en termes de temps de calcul. Cependant, des améliorations et des extensions de l'algorithme ont été développées pour résoudre des problèmes plus complexes avec des milliers de variables et de contraintes.&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Algorithme de Kruskal&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;C’est un algorithme glouton utilisé pour trouver un arbre couvrant de poids minimum dans un graphe non orienté pondéré. C'est une méthode itérative qui ajoute successivement des arêtes de poids minimum qui ne forment pas de cycle dans l'arbre en cours de construction.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Problématique &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;: Résoudre le problème de l'arbre de poids minimal (minimum spanning tree en anglais). Il s'agit d'un problème classique de la théorie des graphes qui consiste à trouver un sous-ensemble d'arêtes d'un graphe non orienté, connectant tous ses sommets tout en minimisant la somme des poids des arêtes sélectionnées.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Le principe de l'Algorithme : &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Consiste à trier toutes les arêtes du graphe par ordre croissant de poids, puis à les ajouter au sous-ensemble de l'arbre de poids minimal, tant que l'ajout d'une arête ne crée pas de cycle dans l'arbre partiel déjà construit. Pour vérifier si l'ajout d'une arête crée un cycle, l'algorithme utilise une structure de données appelée &amp;quot;union-find&amp;quot; ou &amp;quot;disjoint-set&amp;quot;, qui permet de regrouper les sommets en ensembles disjoint.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Conditions de son utilisation:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
+&lt;li style=&quot; font-size:6pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Le graphe doit être non orienté.&lt;/li&gt;
+&lt;li style=&quot; font-size:6pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Le graphe doit être connexe, c'est-à-dire qu'il doit exister un chemin entre chaque paire de sommets.&lt;/li&gt;
+&lt;li style=&quot; font-size:6pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Les poids des arêtes doivent être positifs ou nuls. Si des poids négatifs sont autorisés, il faut utiliser un algorithme spécifique comme l'algorithme de Bellman-Ford pour détecter les cycles de poids négatif.&lt;br /&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Codage de Prüfer &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Une méthode pour représenter un arbre étiqueté à l'aide d'une séquence de nombres. Cette séquence contient n-2 éléments où n est le nombre de sommets de l'arbre.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Voici les étapes pour obtenir le codage de Prüfer d'un arbre :&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Étape 1 : Tant que l'arbre contient plus de 2 sommets, trouvez la feuille de degré minimum de l'arbre.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Étape 2 : Ajoutez l'étiquette du voisin connecté à cette feuille de degré minimum à la séquence de codage de Prüfer.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Étape 3  : Supprimez la feuille de degré minimum et l'arête qui la relie de l'arbre.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Étape 4  : Répétez les étapes 1-3 jusqu'à ce qu'il ne reste que 2 sommets.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Algorithme de détermination du rang des sommets &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;C’est un algorithme qui permet de déterminer le rang des sommets c'est-à-dire la longueur d’un plus long chemin arrivant vers &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Calcul des distances : le calcul des distances sert à calculer la distance à chaque sommet depuis un sommet racine dans un graphe non orienté.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;On parcourt chaque sommet dans l’ordre en gardant dans un tableau la distance la plus courte vers les différents sommets.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700; color:#ff0000;&quot;&gt;Algorithme de Tarjan &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Cet algorithme permet de déterminer les composantes fortement connexes d’un graphe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Il utilise une pile pour stocker les sommets visités et leur ordre de visite. Il attribue également un numéro de sommet à chaque sommet visité. Les composantes fortement connexes sont alors identifiées en trouvant les cycles dans le graphe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;L'algorithme de Tarjan fonctionne en deux temps : une première phase de parcours en profondeur du graphe permet de construire la pile et d'attribuer un numéro à chaque sommet visité. Ensuite, une deuxième phase permet de déterminer les composantes fortement connexes en remontant la pile et en identifiant les cycles dans le graphe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Problématique&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;:Trouver les composantes fortement connexes d'un graphe orienté. Les composantes fortement connexes sont des sous-graphes du graphe dans lesquels chaque paire de sommets est reliée par un chemin orienté.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Le principe de l'Algorithme: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Parcourir le graphe en profondeur en utilisant une approche récursive, en maintenant une pile des sommets visités. L'algorithme affecte un numéro de visite à chaque sommet lorsqu'il est visité pour la première fois, et met à jour un tableau de valeurs de temps appelé tableau de numérotation. L'algorithme utilise également un tableau appelé tableau de basse valeur, qui stocke la valeur la plus basse du tableau de numérotation atteinte par chaque sommet accessible depuis ce sommet, y compris lui-même.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:144%;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Conditions de son utilisation: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;L'algorithme de Tarjan sont que le graphe doit être orienté, c'est-à-dire que les arêtes doivent être dirigées. De plus, l'algorithme fonctionne mieux lorsque le graphe est relativement petit, sinon le temps de calcul peut être prohibitif. Enfin, l'algorithme de Tarjan peut être utilisé pour résoudre d'autres problèmes liés aux graphes, tels que la recherche de points d'articulation ou de ponts dans un graphe non orienté.&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
